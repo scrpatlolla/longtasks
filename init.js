@@ -45,6 +45,7 @@ function init() {
   console.log('Make observer');
   window._observer = new PerformanceObserver(function(entryList) {
     var entries = entryList.getEntries();
+    console.log('ENTRIES', entries);
     for (var i = 0; i < entries.length; i++) {
       var newItem = "long task! " + "start: " + entries[i].startTime + ", duration: " + (entries[i].duration) + "ms, name: " + entries[i].name;
       var logBox = document.getElementById('eventlog');
